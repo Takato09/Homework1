@@ -1,4 +1,5 @@
 users = []
+import datetime
 
 while True:
     print("Enter 1 to print information about user, 2 to add new user, 3 to delete user, 4 to quit")
@@ -11,24 +12,45 @@ while True:
                 e_mail = input("Enter e-mail:")
                 for user in users:
                     if user["e_mail"] == e_mail:
-                        print(f"Full name:{user['full_name']}\nE-mail::{user['e_mail']}\nUsername:{user['username']}\n")
+                        print("Full name:", user['full_name'])
+                        print("E-mail:", user['e_mail'])
+                        print("Username:", user['username'])
+                        print("Registered at:", user['date'])
             elif sub_option == 2:
                 username = input("Enter username:")
                 for user in users:
                     if user["username"] == username:
-                        print(f"Full name:{user['full_name']}\nE-mail:{user['e_mail']}\nUsername:{user['username']}\n")
+                        print("Full name:", user['full_name'])
+                        print("E-mail:", user['e_mail'])
+                        print("Username:", user['username'])
+                        print("Registered at:", user['date'])
             else:
                 print("Option not allowed!")
                 break
     elif option == 2:
-        user = {"full_name": input("Full name:"),
-                "username": input("Username:"),
-                "e_mail": input("E-mail:"),
-                }
+        user = {'full_name': input("Full name:"), 'username': input("Username:"), 'e_mail': input("E-mail:"),
+                'date': datetime.datetime.now()}
         users.append(user)
         print("Added user")
     elif option == 3:
-        print("Delete user")
+        print("Enter 1 to delete by e-mail 2 to delete by username")
+        while True:
+            sub_option = int(input("Your input:"))
+            if sub_option == 1:
+                e_mail = input("Enter e-mail:")
+                for user in users:
+                    if user["e_mail"] == e_mail:
+                        users.pop(user)
+                        print("Removed user")
+            elif sub_option == 2:
+                username = input("Enter username:")
+                for user in users:
+                    if user["username"] == username:
+                        users.pop(user)
+                        print("Removed user")
+            else:
+                print("Option not allowed!")
+                break
     elif option == 4:
         print("Quit")
         break
