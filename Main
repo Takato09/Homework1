@@ -1,0 +1,37 @@
+users = []
+
+while True:
+    print("Enter 1 to print information about user, 2 to add new user, 3 to delete user, 4 to quit")
+    option = int(input("Your input:"))
+    if option == 1:
+        print("Enter 1 to search by e-mail 2 to search by username")
+        while True:
+            sub_option = int(input("Your input:"))
+            if sub_option == 1:
+                e_mail = input("Enter e-mail:")
+                for user in users:
+                    if user["e_mail"] == e_mail:
+                        print(f"Full name:{user['full_name']}\nE-mail::{user['e_mail']}\nUsername:{user['username']}\n")
+            elif sub_option == 2:
+                username = input("Enter username:")
+                for user in users:
+                    if user["username"] == username:
+                        print(f"Full name:{user['full_name']}\nE-mail:{user['e_mail']}\nUsername:{user['username']}\n")
+            else:
+                print("Option not allowed!")
+                break
+    elif option == 2:
+        user = {"full_name": input("Full name:"),
+                "username": input("Username:"),
+                "e_mail": input("E-mail:"),
+                }
+        users.append(user)
+        print("Added user")
+    elif option == 3:
+        print("Delete user")
+    elif option == 4:
+        print("Quit")
+        break
+    else:
+        print("Option not allowed!")
+        option = int(input("Your input:"))
