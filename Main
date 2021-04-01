@@ -1,5 +1,6 @@
 users = []
 import datetime
+
 while True:
     print("Enter 1 to print information about user, 2 to add new user, 3 to delete user, 4 to quit")
     option = int(input("Your input:"))
@@ -12,23 +13,17 @@ while True:
                 for user in users:
                     if user["e_mail"] == e_mail:
                         print("Full name:", user['full_name'])
-                        print("Username:", user['username'])
                         print("E-mail:", user['e_mail'])
+                        print("Username:", user['username'])
                         print("Registered at:", user['date'])
-                    else:
-                        print("User not found")
-                break
             elif sub_option == 2:
                 username = input("Enter username:")
                 for user in users:
                     if user["username"] == username:
                         print("Full name:", user['full_name'])
-                        print("Username:", user['username'])
                         print("E-mail:", user['e_mail'])
+                        print("Username:", user['username'])
                         print("Registered at:", user['date'])
-                    else:
-                        print("User not found")
-                break
             else:
                 print("Option not allowed!")
                 break
@@ -45,20 +40,14 @@ while True:
                 e_mail = input("Enter e-mail:")
                 for user in users:
                     if user["e_mail"] == e_mail:
-                        users.remove(user)
-                        print("User removed")
-                    else:
-                        print("User not found")
-                break
+                        users.pop(user)
+                        print("Removed user")
             elif sub_option == 2:
                 username = input("Enter username:")
                 for user in users:
                     if user["username"] == username:
-                        users.remove(user)
-                        print("User removed")
-                    else:
-                        print("User not found")
-                break
+                        users.pop(user)
+                        print("Removed user")
             else:
                 print("Option not allowed!")
                 break

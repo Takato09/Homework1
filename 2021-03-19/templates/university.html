@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>University page</title>
+</head>
+<body>
+<h1>Welcome to university homepage</h1>
+<h2>Please,input student grades</h2>
+        <table>
+        <form action="{{url_for('university_response')}}">
+        <tr>
+            <th align="left">Full name:</th><th align="left"> <input type="text" size=20px name="name" placeholder="Name Surname"></th>
+        </tr>
+        <tr>
+            <th align="left">Mathematics:</th><th align="left"> <input type="text" size=3px name="math" placeholder="0-100"></th>
+        </tr>
+        <tr>
+            <th align="left">Latvian language:</th><th align="left"> <input type="text" size=3px name="latvian" placeholder="0-100"></th>
+        </tr>
+        <tr>
+           <th align="left">Foreign language:</th><th align="left"> <input type="text" size=3px name="foreign" placeholder="0-100"></th>
+            </tr>
+            <tr>
+            <th align="left"><input type="submit" value="Submit"></th></tr>
+        </form> </table>
+
+</body>
+</html>

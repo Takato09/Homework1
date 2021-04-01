@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>University response page<</title>
+</head>
+<body>
+{% if is_good_average %}
+      <h1>{{name}} can apply to university</h1>
+    {% else %}
+      <h1>Hmm, {{name}} can not apply to university</h1>
+    {% endif %}
+
+</body>
+</html>
